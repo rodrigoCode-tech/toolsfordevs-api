@@ -9,12 +9,9 @@ public class CpfGeneratorHandler implements RequestHandler<APIGatewayProxyReques
 
     @Override
     public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent apiGatewayProxyRequestEvent, Context context) {
-        //init
-        String cpf = CpfGenerator.generateCPF();
-
         APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent();
         response.setStatusCode(200);
-        response.setBody(cpf);
+        response.setBody(CpfGenerator.generateCPF());
 
         return response;
     }
