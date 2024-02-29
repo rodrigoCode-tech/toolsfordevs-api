@@ -1,0 +1,17 @@
+service: cpf-generator-service
+
+provider:
+  name: aws
+  runtime: java17
+  region: us-east-1
+
+package:
+  artifact: target/toolsfordevs-api-1.0-SNAPSHOT.jar
+
+functions:
+  generateCpf:
+    handler: com.rodrigobragadev.tools.CpfGeneratorHandler
+    events:
+      - http:
+          path: generate-cpf
+          method: get
