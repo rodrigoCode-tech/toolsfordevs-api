@@ -15,13 +15,13 @@ public class CpfGeneratorTest {
         String cpf = CpfGenerator.generateCPF();
         assertTrue(cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}"), "CPF não está no formato esperado");
     }
-
-
-    //@Test
-    public void testCpfValidity() {
-        for (int i = 0; i < 100; i++) {
-            String cpf = CpfGenerator.generateCPF();
-            assertTrue(CpfValidator.isValidCPF(cpf), "CPF inválido gerado: " + cpf);
-        }
-    }
+//
+//
+//    //@Test
+//    public void testCpfValidity() {
+//        for (int i = 0; i < 100; i++) {
+//            String cpf = CpfGenerator.generateCPF();
+//            assertTrue(CpfValidator.isValidCPF(cpf), "CPF inválido gerado: " + cpf);
+//        }
+//    }
 }
