@@ -16,7 +16,48 @@ public class CpfGenerator {
 
         return formatCPF(cpf);
     }
+    public static String generateCNPJ() {
+        Random random = new Random();
+        int[] cnpj = new int[12];
+        for (int i = 0; i < 8; i++) {
+            cnpj[i] = random.nextInt(10);
+        }
 
+        cnpj = appendDigitCNPJ(cnpj, calculateDigitCNPJ(cnpj, 5));
+        cnpj = appendDigitCNPJ(cnpj, calculateDigitCNPJ(cnpj, 6));
+
+        return formatCNPJ(cnpj);
+    }
+
+    private static int[] appendDigitCNPJ(int[] cnpj, int digit) {
+        int[] newCnpj = new int[cnpj.length + 1];
+        System.arraycopy(cnpj, 0, newCnpj, 0, cnpj.length);
+        newCnpj[cnpj.length] = digit;
+        return newCnpj;
+    }
+
+    private static int calculateDigitCNPJ(int[] cnpj, int weight) {
+        int sum = 0;
+        for (int i = 0; i < cnpj.length; i++) {
+            sum += cnpj[i] * weight--;
+            if (weight == 1) {
+                weight = 9;
+            }
+        }
+        int remainder = sum % 11;
+        return (remainder < 2) ? 0 : 11 - remainder;
+    }
+
+    private static String formatCNPJ(int[] cnpj) {
+        StringBuilder formatted = new StringBuilder();
+        for (int i = 0; i < cnpj.length; i++) {
+            formatted.append(cnpj[i]);
+            if (i == 1 || i == 4) formatted.append('.');
+            else if (i == 7) formatted.append('/');
+            else if (i == 11) formatted.append('-');
+        }
+        return formatted.toString();
+    }
     private static int[] appendDigit(int[] cpf, int digit) {
         int[] newCpf = new int[cpf.length + 1];
         System.arraycopy(cpf, 0, newCpf, 0, cpf.length);
