@@ -14,7 +14,16 @@ public class CpfGeneratorHandler implements RequestHandler<APIGatewayProxyReques
         APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent();
         response.setHeaders(Collections.singletonMap("Access-Control-Allow-Origin", "*"));
         response.setStatusCode(200);
-        response.setBody(CpfGenerator.generateCPF());
+        String type = apiGatewayProxyRequestEvent.getQueryStringParameters().getOrDefault("type", "cpf");
+
+        if ("cpf".equalsIgnoreCase(type)) {
+            response.setBody(CpfGenerator.generateCPF());
+        } else if ("cnpj".equalsIgnoreCase(type)) {
+            response.setBody(CpfGenerator.generateCNPJ());
+        } else {
+            response.setStatusCode(400);
+            response.setBody("Invalid document type. Use 'cpf' or 'cnpj'.");
+        }
 
         return response;
     }
