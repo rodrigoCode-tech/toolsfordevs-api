@@ -14,8 +14,7 @@ Este é um projeto Java que implementa uma API para gerar CPFs e CNPJs válidos 
 Para gerar um CPF aleatório, faça uma requisição GET para o endpoint `/generate-cpf`. Por exemplo:
 
 ```
-GET https://sua-api.execute-api.us-east-1.amazonaws.com/dev/generate-cpf
-```
+https://czihgc8hvg.execute-api.us-east-1.amazonaws.com/dev/generate-cpf?type=cpf```
 
 Isso retornará um CPF aleatório no formato `XXX.XXX.XXX-XX`.
 
@@ -24,7 +23,7 @@ Isso retornará um CPF aleatório no formato `XXX.XXX.XXX-XX`.
 Para gerar um CNPJ aleatório, faça uma requisição GET para o endpoint `/generate-cpf?type=cnpj`. Por exemplo:
 
 ```
-GET https://sua-api.execute-api.us-east-1.amazonaws.com/dev/generate-cpf?type=cnpj
+https://czihgc8hvg.execute-api.us-east-1.amazonaws.com/dev/generate-cpf?type=cnpj
 ```
 
 Isso retornará um CNPJ aleatório no formato `XX.XXX.XXX/XXXX-XX`.
