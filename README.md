@@ -30,5 +30,3 @@ https://czihgc8hvg.execute-api.us-east-1.amazonaws.com/dev/generate-cpf?type=cnp
 Isso retornará um CNPJ aleatório no formato `XX.XXX.XXX/XXXX-XX`.
 
 ---
-
-Adicione mais informações conforme necessário para descrever melhor o seu projeto e como utilizá-lo.
