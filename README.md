@@ -1,7 +1,3 @@
-Pelo que entendi, você está desenvolvendo uma API em Java que gera CPFs e CNPJs aleatórios. Aqui está uma descrição básica que você pode usar para o seu projeto no GitHub:
-
----
-
 # Gerador de CPFs e CNPJs
 
 Este é um projeto Java que implementa uma API para gerar CPFs e CNPJs válidos de forma aleatória. A API foi desenvolvida usando o framework AWS Lambda e API Gateway da Amazon Web Services (AWS).
