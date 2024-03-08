@@ -1,6 +1,6 @@
 # Gerador de CPFs e CNPJs
 
-Este é um projeto Java que implementa uma API para gerar CPFs e CNPJs válidos de forma aleatória. A API foi desenvolvida usando o framework AWS Lambda e API Gateway da Amazon Web Services (AWS).
+Este é um projeto Java que implementa uma API para gerar CPFs e CNPJs válidos de forma aleatória. A API foi desenvolvida em Java usando o framework AWS Lambda e API Gateway da Amazon Web Services (AWS).
 
 ## Funcionalidades
 
